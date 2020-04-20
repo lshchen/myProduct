@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import {connect} from 'react-redux';
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +23,10 @@ function App() {
   );
 }
 
-export default App;
+export default connect(
+    state => {
+        return {
+            num: state.tabReducer.num
+        }
+    }
+)(App);
