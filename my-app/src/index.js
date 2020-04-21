@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'lib-flexible/flexible';
 import './index.css';
+import './assets/css/rem_function.scss'
 import App from './App';
 import store from './store'
 import {Provider} from 'react-redux';
