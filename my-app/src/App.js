@@ -18,15 +18,28 @@ function App(props) {
         >
           Learn React
         </a>
+        <div>{props.num}</div>
+        <button onClick={props.setNum}>新增</button>
       </header>
     </div>
   );
 }
 
 export default connect(
-    state => {
+  (state) => {
+    console.log(state);
         return {
-            num: state.tabReducer.num
+            num: state.num
         }
+  },
+  (dispatch) => {
+    return {
+      setNum: () =>{
+        dispatch({
+          type: 'ADD_TODO',
+          obj: 1,
+        })
+      }
     }
+  }
 )(App);
