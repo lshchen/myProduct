@@ -1,4 +1,4 @@
-import './SearchBar.scss';
+import './searchBar.scss'
 
 
 import React from 'react';

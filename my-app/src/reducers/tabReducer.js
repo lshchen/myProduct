@@ -25,13 +25,15 @@ const addTodo = (state,action)=>{
     }
 }
 const changeTab = (state,action)=>{
+    console.log(action);
     let activeKey = action.obj.activeKey;
     return {...state,activeKey:activeKey}
 }
 const tabReducer = (state = initState,action) => {
+    console.log(action);
     if (action.type === ADD_TODO) {
         return addTodo(state,action);
-    } else if (action.activeKey === CHANGE_TAB) {
+    } else if (action.type === CHANGE_TAB) {
         return changeTab(state,action);
     } else {
         return state;
