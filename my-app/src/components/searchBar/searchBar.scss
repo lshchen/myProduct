@@ -16,6 +16,9 @@
     background-color: rgba(0,0,0,0.33);
     height: px2rem(28px);
     width: px2rem(92px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .location-icon {
     display: inline-block;
@@ -43,7 +46,7 @@
       background-image: url('./img/arrowIcon.png');
       background-size: cover;
       right: px2rem(-15px);
-      top: px2rem(-1px);
+      top: px2rem(1px);
     }
   }
   .search-btn {

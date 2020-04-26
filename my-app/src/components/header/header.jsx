@@ -1,6 +1,7 @@
 import React from "react";
-import './header'
+import './header.scss'
 import SearchBar from "../searchBar/searchBar";
+import bgUrl from '../../assets/images/bannertemp.jpg'
 class Header extends React.Component{
     constructor(props) {
         super(props);
@@ -9,9 +10,8 @@ class Header extends React.Component{
         return (
             <div className="header">
                 <SearchBar />
-                <img className="banner-img" src="../../assets/images/bannertemp.jpg" alt="123" />
+                <img className="banner-img" src={bgUrl} alt="123" />
             </div>
-
         );
     }
 }

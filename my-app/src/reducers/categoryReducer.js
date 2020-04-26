@@ -5,9 +5,8 @@ const initState = {
 };
 
 const getCategory = (state, action) =>{
-
-    return { ...state, items: action.obj.data.primary_filter};
-
+    console.log(action)
+    return { ...state, items: action.obj.primary_filter};
 }
 
 const categoryReducer = (state = initState, action) => {

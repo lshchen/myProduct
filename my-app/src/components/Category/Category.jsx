@@ -1,20 +1,12 @@
 import './Category.scss';
-
-
 import React from 'react';
-
-
-
 import { connect } from 'react-redux';
-
-import { getHeaderData } from '../../actions/categoryAction';
-
+import {getHeaderData} from "../../actions/categoryAction";
 
 /**
  * @constructor <Category />
  * @description 外卖类别
  */
-
 class Category extends React.Component {
     constructor(props) {
         super(props);
@@ -22,6 +14,7 @@ class Category extends React.Component {
     }
 
     fetchData(){
+        console.log('aa')
         this.props.dispatch(getHeaderData())
     }
     goCategory(){
