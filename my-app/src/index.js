@@ -6,14 +6,12 @@ import './assets/css/reset.css'
 import App from './App';
 import {store, history} from './store'
 import {Provider} from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+
 ReactDOM.render(
   <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <React.StrictMode>
-                <App />
-            </React.StrictMode>
-        </ConnectedRouter>
+    <React.StrictMode>
+      <App history={history} />
+    </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );

@@ -6,29 +6,23 @@ import scrollViewReducer from './reducers/scrollViewReducer'
 import orderReducer from "./reducers/orderReducer";
 import thunk from 'redux-thunk';
 
-import { routerMiddleware,routerReducer} from 'react-router-redux';
+import { routerMiddleware, connectRouter} from 'connected-react-router';
 const createHistory = require('history').createBrowserHistory
 const history = createHistory();
 const historyMiddle = routerMiddleware(history)
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__({}): compose;
-const ENHANCERS = composeEnhancers(applyMiddleware(thunk));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__({}) || compose;
+const ENHANCERS = composeEnhancers(applyMiddleware(thunk,historyMiddle));
 const reducer = combineReducers({
     categoryReducer,
     tabReducer,
     contentListReducer,
     scrollViewReducer,
     orderReducer,
-    router: routerReducer
+    router: connectRouter(history)
 });
-The above error occurred in the <ConnectedRouter> component:
-in ConnectedRouter (at src/index.js:12)
-in Provider (at src/index.js:11)
-
-Consider adding an error boundary to your tree to customize error handling behavior.
 const store = createStore(
     reducer,
-    applyMiddleware(thunk, historyMiddle),
+    ENHANCERS,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 export {
