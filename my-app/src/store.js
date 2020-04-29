@@ -10,7 +10,7 @@ import { routerMiddleware, connectRouter} from 'connected-react-router';
 const createHistory = require('history').createBrowserHistory
 const history = createHistory();
 const historyMiddle = routerMiddleware(history)
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__({}) || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
 const ENHANCERS = composeEnhancers(applyMiddleware(thunk,historyMiddle));
 const reducer = combineReducers({
     categoryReducer,

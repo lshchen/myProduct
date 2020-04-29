@@ -14,7 +14,6 @@ class Category extends React.Component {
     }
 
     fetchData(){
-        console.log('aa')
         this.props.dispatch(getHeaderData())
     }
     goCategory(){
@@ -24,7 +23,7 @@ class Category extends React.Component {
         let items = this.props.items;
         // 复制数组防止引用
         let _items = JSON.parse(JSON.stringify(items));
-        
+
         return _items.splice(0,8).map((item, index)=>{
             return (
                 <div key={index} className="category-item" onClick={this.goCategory}>

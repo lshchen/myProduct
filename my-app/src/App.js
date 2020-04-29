@@ -1,16 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux';
 import BottomBar from './pages/BottomBar/BottomBar'
 import Home from "./pages/home/home";
 import My from "./pages/My/My";
-import { Route, WithRouter,Switch} from 'react-router-dom'
-import { ConnectedRouter } from 'react-router-redux';
+import {Route, withRouter, Switch}  from 'react-router-dom'
+import { ConnectedRouter } from 'connected-react-router'
 import Order from "./pages/Order/Order";
 function App(props) {
-  console.log(props);
-  // { history, context }
   return (
     <div className="App">
       {/*<header className="App-header">*/}
@@ -29,22 +26,21 @@ function App(props) {
       {/*  <div>{props.num}</div>*/}
       {/*  <button onClick={props.setNum}>新增</button>*/}
       {/*</header>*/}
-      <ConnectedRouter history={history}>
+      <ConnectedRouter history={props.history}>
         <Switch>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/home" component={Home}/>
           <Route path="/order" component={Order}/>
           <Route path="/my" component={My}/>
         </Switch>
-        <BottomBar></BottomBar>
+        <BottomBar history={props.history}></BottomBar>
       </ConnectedRouter>
-
     </div>
   );
 }
 
-export default WithRouter(connect(
+export default connect(
   (state) => {
-    console.log(state);
         return {
             num: state.num
         }
@@ -59,4 +55,4 @@ export default WithRouter(connect(
       }
     }
   }
-)(App));
+)(withRouter(App));

@@ -9,11 +9,11 @@ class BottomBar extends React.Component{
     }
     changeTab (item) {
         this.props.history.replace(item.key);
-        // this.props.dispatch(
-        //     changeTab({
-        //       activeKey: item.key
-        //    })
-        // );
+        this.props.dispatch(
+            changeTab({
+              activeKey: item.key
+           })
+        );
     }
     renderItems () {
         let tabs = this.props.tabs;
@@ -23,7 +23,7 @@ class BottomBar extends React.Component{
                 cls += ' active';
             }
             return (
-                <NavLink key={index} className={cls} replace={true} to={"/" + item.key} activeClassName="active" onClick={()=>this.changeTab(item)}>
+                <NavLink key={index} className={cls} replace={true} to={"/" + item.key}  onClick={()=>this.changeTab(item)}>
                     <div className="tab_icon"></div>
                     <div className="btn_name">{item.name}</div>
                 </NavLink>
