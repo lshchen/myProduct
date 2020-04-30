@@ -15,7 +15,8 @@ const initState = {
             key: tabKey.my
         }
     ],
-    activeKey: tabKey.home
+    activeKey: tabKey.home,
+    num: 0
 }
 const addTodo = (state,action)=>{
     let obj = action.obj;
