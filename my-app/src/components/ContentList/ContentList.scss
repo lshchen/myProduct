@@ -1,0 +1,9 @@
+
+@function px2rem($px) {
+    $rem : 37.5px;
+    @return ($px / $rem) + rem;
+}
+.list-content {
+    padding-bottom: px2rem(50px);
+    padding-top: px2rem(45px);
+}

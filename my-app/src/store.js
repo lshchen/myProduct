@@ -4,6 +4,11 @@ import categoryReducer from "./reducers/categoryReducer";
 import contentListReducer from './reducers/contentListReducer'
 import scrollViewReducer from './reducers/scrollViewReducer'
 import orderReducer from "./reducers/orderReducer";
+import headerReducer from "./reducers/headerReducer";
+import detailReducer from "./reducers/detailReducer";
+import commentReducer from "./reducers/commentReducer";
+import restanurantReducer from "./reducers/restanurantReducer";
+import menuReducer from "./reducers/menuReducer";
 import thunk from 'redux-thunk';
 import { routerMiddleware, connectRouter} from 'connected-react-router';
 // import createSagaMiddleware from "redux-saga"
@@ -20,6 +25,11 @@ const reducer = combineReducers({
     contentListReducer,
     scrollViewReducer,
     orderReducer,
+    headerReducer,
+    detailReducer,
+    restanurantReducer,
+    commentReducer,
+    menuReducer,
     router: connectRouter(history)
 });
 const store = createStore(

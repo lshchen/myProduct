@@ -29,7 +29,6 @@ function App(props) {
 
 export default connect(
   (state) => {
-    console.log(state);
         return {
             num: state.tabReducer.num
         }
