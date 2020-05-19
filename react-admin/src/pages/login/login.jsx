@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Form, Input, Button } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import logo from './images/logo.png'
-import './login.less'
+import './login.scss'
 const Item = Form.Item
 
 class Login extends Component {
@@ -11,15 +11,6 @@ class Login extends Component {
     handleSubmit = e => {
         // 阻止事件的默认行为: 阻止表单的提交
         e.preventDefault()
-
-        // 取出输入的相关的数据
-        // const form = this.props.form
-        // const values = form.getFieldsValue()
-        // const username = form.getFieldValue('username')
-        // const password = form.getFieldValue('password')
-        // console.log(values, username, password)
-
-
     }
 
     /*
@@ -78,6 +69,7 @@ class Login extends Component {
         )
     }
 }
+const WrapperLogin = Form.create()(Login);
 export default Login;
 /*
 理解Form组件: 包含<Form>的组件
